@@ -1,22 +1,19 @@
-'use strict';
+class RegexHelper {
 
-const RegexHelper = {
-  __esModule: true,
-
-  removeLine(text, from, to) {
+  static removeLine(text, from, to) {
     const firstPart = text.substring(0, from);
     if (to !== text.length) {
       return firstPart + text.substring(to + 1, text.length);
     }
     return firstPart.substring(0, firstPart.length - 1);
-  },
+  }
 
-  removeAllLinesByRegex(text, regex) {
+  static removeAllLinesByRegex(text, regex) {
     const matches = RegexHelper.matchAllRegex(text, regex);
     return RegexHelper.removeAllLines(text, matches);
-  },
+  }
 
-  removeAllLines(text, matches) {
+  static removeAllLines(text, matches) {
     let result = text;
     for (let i = matches.length - 1; i >= 0; i--) {
       const match = matches[i];
@@ -25,7 +22,7 @@ const RegexHelper = {
       result = RegexHelper.removeLine(result, fromIndex, toIndex);
     }
     return result;
-  },
+  }
 
   /**
    * get first regex and return
@@ -33,16 +30,20 @@ const RegexHelper = {
    * @param  {regex}  re  regexobj
    * @return {match}      match object
    */
-  matchFirstRegex(str, re) {
+  static matchFirstRegex(str, re) {
     let m;
     while (m !== null) {
       m = re.exec(str);
+      if (m === null) {
+        break;
+      }
+
       if (m.index === re.lastIndex) {
         re.lastIndex++;
       }
       return m;
     }
-  },
+  }
 
   /**
    * get the result string from group index
@@ -51,13 +52,13 @@ const RegexHelper = {
    * @param  {number} groupIndex
    * @return {string}
    */
-  groupFromRegex(str, re, groupIndex) {
+  static groupFromRegex(str, re, groupIndex) {
     const match = RegexHelper.matchFirstRegex(str, re);
     if (match) {
       return match[groupIndex];
     }
     return null;
-  },
+  }
 
   /**
    * return all maches from regex exec
@@ -65,7 +66,7 @@ const RegexHelper = {
    * @param  {regex}  re
    * @return {array}
    */
-  matchAllRegex(str, re) {
+  static matchAllRegex(str, re) {
     let m;
     const allMatches = [];
     while (m !== null) {
@@ -79,7 +80,7 @@ const RegexHelper = {
       allMatches.push(m);
     }
     return allMatches;
-  },
-};
+  }
+}
 
-module.exports = RegexHelper;
+export default RegexHelper;

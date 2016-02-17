@@ -1,10 +1,10 @@
 {
   "name": "chords-parser",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "parse guitar chords",
   "main": "index.js",
   "bin": {
-    "chords-parser": "./bin/chords-parser.js"
+    "chords-parser": "./lib/src/index.js"
   },
   "scripts": {
     "test": "gulp test",
