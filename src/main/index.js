@@ -1,10 +1,10 @@
 import BB from 'bluebird';
-import merge from 'lodash.merge';
+import _ from 'lodash';
 import dotenv from 'dotenv';
 
 class Main {
   constructor(opts) {
-    this.opts = merge({}, opts);
+    this.opts = _.merge({}, opts);
     dotenv.load({ silent: true });
   }
 

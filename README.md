@@ -1,6 +1,6 @@
-# REPLACE_PROJECT_NAME
+# chords-parser
 
-> REPLACE_TODO_DESCRIPTION
+> parse guitar chords
 
 ---------------------------------------
 ----- REMOVE THIS AFTER USE -----------
@@ -40,15 +40,15 @@ git commit -m"[Project] Initial version from boilerplate"
 
 ```sh
 # replace main bin filename
-find . -name 'REPLACE_PROJECT_NAME.js' -type f -exec bash -c 'mv "$1" "${1/REPLACE_PROJECT_NAME.js/__MY-CLI-TOOL__.js}"' -- {} \;
+find . -name 'chords-parser.js' -type f -exec bash -c 'mv "$1" "${1/chords-parser.js/__MY-CLI-TOOL__.js}"' -- {} \;
 git add . -A
 
 # replace other strings inside files
-find . -type f -not -path "./node_modules/*" -not -path "./.git/*" -not -path "./lib/*" -exec sed -i 's/REPLACE_PROJECT_GITHUB_URI/https:\/\/github.com\/__GITHUB_USER__\/__MY-CLI-TOOL__/g' {} +
-find . -type f -not -path "./node_modules/*" -not -path "./.git/*" -not -path "./lib/*" -exec sed -i 's/REPLACE_PROJECT_NAME/__MY-CLI-TOOL__/g' {} +
-find . -type f -not -path "./node_modules/*" -not -path "./.git/*" -not -path "./lib/*" -exec sed -i 's/REPLACE_TODO_DESCRIPTION/__PROJECT_DESCRIPTION__/g' {} +
-find . -type f -not -path "./node_modules/*" -not -path "./.git/*" -not -path "./lib/*" -exec sed -i 's/REPLACE_TODO_BIN_DESCRIPTION/__BIN_DEFAULT_DESCRIPTION__/g' {} +
-find . -type f -not -path "./node_modules/*" -not -path "./.git/*" -not -path "./lib/*" -exec sed -i 's/REPLACE_TODO_AUTHOR/__THE_AUTHOR__/g' {} +
+find . -type f -not -path "./node_modules/*" -not -path "./.git/*" -not -path "./lib/*" -exec sed -i 's/https://github.com/saitodisse/chords-parser/https:\/\/github.com\/__GITHUB_USER__\/__MY-CLI-TOOL__/g' {} +
+find . -type f -not -path "./node_modules/*" -not -path "./.git/*" -not -path "./lib/*" -exec sed -i 's/chords-parser/__MY-CLI-TOOL__/g' {} +
+find . -type f -not -path "./node_modules/*" -not -path "./.git/*" -not -path "./lib/*" -exec sed -i 's/parse guitar chords/__PROJECT_DESCRIPTION__/g' {} +
+find . -type f -not -path "./node_modules/*" -not -path "./.git/*" -not -path "./lib/*" -exec sed -i 's/chords parser/__BIN_DEFAULT_DESCRIPTION__/g' {} +
+find . -type f -not -path "./node_modules/*" -not -path "./.git/*" -not -path "./lib/*" -exec sed -i 's/saitodisse@gmail.com/__THE_AUTHOR__/g' {} +
 ```
 
 - Search all other `TODO` in code and replace with correct values
@@ -83,14 +83,14 @@ git push origin master -u
 ### Install
 
 ```sh
-npm install REPLACE_PROJECT_NAME -g
+npm install chords-parser -g
 
 ```
 
 ### Run
 
 ```sh
-REPLACE_PROJECT_NAME             # REPLACE_TODO_DESCRIPTION
+chords-parser             # parse guitar chords
 
 ```
 
@@ -99,7 +99,7 @@ REPLACE_PROJECT_NAME             # REPLACE_TODO_DESCRIPTION
 ```sh
 npm install
 npm test
-node ./bin/REPLACE_PROJECT_NAME.js -h
+node ./bin/chords-parser.js -h
 
 ```
 

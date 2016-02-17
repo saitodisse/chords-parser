@@ -1,10 +1,10 @@
 {
-  "name": "REPLACE_PROJECT_NAME",
+  "name": "chords-parser",
   "version": "0.0.1",
-  "description": "REPLACE_TODO_DESCRIPTION",
+  "description": "parse guitar chords",
   "main": "index.js",
   "bin": {
-    "REPLACE_PROJECT_NAME": "./bin/REPLACE_PROJECT_NAME.js"
+    "chords-parser": "./bin/chords-parser.js"
   },
   "scripts": {
     "test": "gulp test",
@@ -13,17 +13,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+REPLACE_PROJECT_GITHUB_URI.git"
+    "url": "git+https://github.com/saitodisse/chords-parser.git"
   },
   "keywords": [
     "cli tool"
   ],
-  "author": "REPLACE_TODO_AUTHOR",
+  "author": "saitodisse@gmail.com",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "REPLACE_PROJECT_GITHUB_URI/issues"
+    "url": "https://github.com/saitodisse/chords-parser/issues"
   },
-  "homepage": "REPLACE_PROJECT_GITHUB_URI",
+  "homepage": "https://github.com/saitodisse/chords-parser",
   "devDependencies": {
     "azk-dev": "^0.3.0",
     "babel-eslint": "^4.1.8",
@@ -36,6 +36,7 @@
     "chalk": "^1.1.1",
     "cli-router": "^0.3.7",
     "dotenv": "^1.2.0",
+    "lodash": "^4.4.0",
     "lodash.merge": "^4.0.1",
     "source-map-support": "^0.4.0"
   }
