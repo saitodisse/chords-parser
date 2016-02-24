@@ -86,18 +86,11 @@ class ChordTransposer {
     return chordTransposed;
   }
 
-  _insertText(original, text, start, moveRight) {
+  _insertText(original, text, start) {
     const before = original.substr(0, start);
     const after = original.substr(start, original.length);
-    let afterCut = after.substr(text.length, after.length);
-
-    let spaceBefore = '';
-    if (moveRight) {
-      spaceBefore = ' ';
-      afterCut = after.substr(text.length + 1, after.length);
-    }
-
-    return `${before}${spaceBefore}${text}${afterCut}`;
+    const afterCut = after.substr(text.length, after.length);
+    return `${before}${text}${afterCut}`;
   }
 
   transposeLine(originalLine, changeRootsValue) {
@@ -122,27 +115,9 @@ class ChordTransposer {
     // insert new chord in text
     for (let i = 0; i < parsedOriginal.length; i++) {
       const transposedChordString = ChordPrint.print(parsedTransposed[i].chord);
-
-      // insert a char if previous was smaller
-      let moveRight = false;
-      if (i > 0) {
-        // previous original chord length
-        const previousChordString = ChordPrint.print(parsedOriginal[i - 1].chord);
-        const previousOriginalChordLength = previousChordString.length;
-
-        // previous transposed chord length
-        const previousTransposedChordString = ChordPrint.print(parsedTransposed[i - 1].chord);
-        const previousTransposedChordLength = previousTransposedChordString.length;
-
-        if (previousTransposedChordLength < previousOriginalChordLength) {
-          moveRight = true;
-        }
-      }
-
       transposedChordText = this._insertText(transposedChordText,
                                              transposedChordString,
-                                             parsedOriginal[i].loc.start,
-                                             moveRight);
+                                             parsedOriginal[i].loc.start);
     }
 
     return {
